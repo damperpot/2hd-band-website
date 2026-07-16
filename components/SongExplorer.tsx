@@ -27,7 +27,7 @@ export function SongExplorer({ songs }: { songs: Song[] }) {
   }, [filter, query, songs]);
 
   return (
-    <section id="songs" className="bg-charcoal py-20 md:py-32">
+    <section id="songs" className="data-panel py-20 md:py-32">
       <div className="section-shell">
         <div className="mb-8 grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:items-end">
           <div>
@@ -37,7 +37,7 @@ export function SongExplorer({ songs }: { songs: Song[] }) {
           <label className="grid gap-2 text-sm font-bold uppercase tracking-wide text-fog">
             Instant search
             <input
-              className="min-h-12 rounded-sm border border-white/10 bg-white/5 px-4 text-base normal-case tracking-normal text-white outline-none transition placeholder:text-fog/60 focus:border-rose"
+              className="min-h-12 rounded-sm border-0 border-b border-white/20 bg-transparent px-0 text-base normal-case tracking-normal text-white outline-none transition placeholder:text-fog/60 focus:border-rose"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Artist, song, genre, decade..."
@@ -51,7 +51,7 @@ export function SongExplorer({ songs }: { songs: Song[] }) {
               className={`min-h-10 shrink-0 rounded-sm border px-4 text-sm font-black uppercase tracking-wide transition ${
                 filter === item
                   ? "border-rose bg-rose text-white"
-                  : "border-white/10 bg-white/5 text-fog hover:text-white"
+                  : "border-white/10 bg-transparent text-fog hover:border-white/30 hover:text-white"
               }`}
               key={item}
               type="button"
@@ -63,10 +63,13 @@ export function SongExplorer({ songs }: { songs: Song[] }) {
         </div>
         <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
           {visibleSongs.map((song) => (
-            <article className="glass-line rounded-sm p-5" key={`${song.artist}-${song.title}`}>
-              <h3 className="text-lg font-black text-white">{song.title}</h3>
-              <p className="mt-1 text-fog">{song.artist}</p>
-              <p className="mt-4 text-xs font-black uppercase tracking-wide text-rose">
+            <article
+              className="border-t border-white/10 py-5 transition hover:border-rose"
+              key={`${song.artist}-${song.title}`}
+            >
+              <h3 className="text-lg font-black leading-tight text-white">{song.title}</h3>
+              <p className="mt-1 text-sm text-fog">{song.artist}</p>
+              <p className="mt-4 text-[0.68rem] font-black uppercase tracking-wide text-rose">
                 {song.genre} / {song.decade}
               </p>
             </article>

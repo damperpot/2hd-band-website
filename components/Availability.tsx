@@ -14,14 +14,14 @@ export function Availability({ gigs }: { gigs: Gig[] }) {
           <p className="eyebrow mb-4">Availability</p>
           <h2 className="display-heading text-6xl md:text-8xl">Check the diary.</h2>
           <p className="mt-6 text-lg leading-8 text-fog">
-            TimeTree automation is the long-term plan. Version 0.1 keeps this simple and editable
-            so enquiries can start moving quickly.
+            Public shows, private bookings and availability will be tied into the live calendar as
+            the next release matures.
           </p>
         </div>
-        <div className="grid gap-3">
+        <div className="border-y border-white/10">
           {gigs.map((gig) => (
             <article
-              className="grid gap-4 rounded-sm border border-white/10 bg-white/[0.04] p-5 sm:grid-cols-[150px_1fr_auto] sm:items-center"
+              className="grid gap-4 border-b border-white/10 py-5 last:border-b-0 sm:grid-cols-[150px_1fr_auto] sm:items-center"
               key={`${gig.date}-${gig.venue}`}
             >
               <time className="text-sm font-black uppercase tracking-wide text-rose" dateTime={gig.date}>
@@ -31,7 +31,7 @@ export function Availability({ gigs }: { gigs: Gig[] }) {
                 <h3 className="font-black text-white">{gig.venue}</h3>
                 <p className="text-fog">{gig.location}</p>
               </div>
-              <span className="w-fit rounded-sm border border-white/10 px-3 py-2 text-xs font-black uppercase tracking-wide text-white">
+              <span className="w-fit border border-white/10 px-3 py-2 text-xs font-black uppercase tracking-wide text-white">
                 {gig.status}
               </span>
             </article>
