@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description: "Watch 2HD, check availability, and book a premium live band for your venue or event.",
     url: site.domain,
     siteName: site.fullName,
-    images: ["/assets/images/hero-stage.png"],
+    images: ["/assets/images/hero-poster.jpg"],
     type: "website"
   }
 };

@@ -7,6 +7,33 @@ import { bandMembers, gigs, site, songs } from "@/data/site";
 
 const genres = ["Rock", "Punk", "Indie", "New Wave", "Alternative Pop"];
 
+const galleryImages = [
+  {
+    src: "/assets/images/gallery-full-band.jpg",
+    alt: "2HD performing live as a four-piece band"
+  },
+  {
+    src: "/assets/images/gallery-black-white.jpg",
+    alt: "2HD vocalist and guitarist performing in black and white"
+  },
+  {
+    src: "/assets/images/gallery-stage-wide.jpg",
+    alt: "2HD performing on an outdoor stage"
+  },
+  {
+    src: "/assets/images/gallery-crick-stage.jpg",
+    alt: "2HD performing at an outdoor event stage"
+  },
+  {
+    src: "/assets/images/gallery-bass.jpg",
+    alt: "2HD bassist performing live"
+  },
+  {
+    src: "/assets/images/hero-poster.jpg",
+    alt: "2HD branded drum kit under purple stage lighting"
+  }
+];
+
 export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -36,7 +63,7 @@ export default function Home() {
               muted
               loop
               playsInline
-              poster="/assets/images/hero-stage.png"
+              poster="/assets/images/hero-poster.jpg"
               aria-label="2HD live promo video"
             >
               <source src="/assets/video/promo.mp4" type="video/mp4" />
@@ -90,8 +117,8 @@ export default function Home() {
             <div className="grid gap-8 lg:grid-cols-[1.35fr_0.65fr] lg:items-stretch">
               <div className="relative aspect-video overflow-hidden rounded-sm bg-black shadow-glow">
                 <Image
-                  src="/assets/images/hero-stage.png"
-                  alt="2HD live performance placeholder"
+                  src="/assets/images/gallery-full-band.jpg"
+                  alt="2HD performing live as a four-piece band"
                   fill
                   sizes="(min-width: 1024px) 70vw, 100vw"
                   className="object-cover"
@@ -100,10 +127,10 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between gap-4">
                   <span className="text-sm font-black uppercase tracking-wide text-white">
-                    Promo video slot
+                    Promo video
                   </span>
                   <span className="rounded-sm bg-white px-3 py-2 text-xs font-black uppercase text-ink">
-                    Coming soon
+                    Watch above
                   </span>
                 </div>
               </div>
@@ -131,14 +158,14 @@ export default function Home() {
               </p>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
-              {[0, 1, 2].map((item) => (
+              {galleryImages.map((image) => (
                 <div
                   className="relative aspect-[4/5] overflow-hidden rounded-sm bg-charcoal"
-                  key={item}
+                  key={image.src}
                 >
                   <Image
-                    src="/assets/images/hero-stage.png"
-                    alt="2HD gallery placeholder"
+                    src={image.src}
+                    alt={image.alt}
                     fill
                     sizes="(min-width: 768px) 33vw, 100vw"
                     className="object-cover"
