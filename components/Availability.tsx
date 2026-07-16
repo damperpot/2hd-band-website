@@ -61,7 +61,7 @@ export function Availability({ gigs }: { gigs: Gig[] }) {
   }, [gigs]);
 
   return (
-    <section id="availability" className="bg-ink py-20 md:py-32">
+    <section id="shows" className="bg-ink py-20 md:py-32">
       <div className="section-shell grid gap-10 lg:grid-cols-[0.72fr_1.28fr]">
         <div>
           <p className="eyebrow mb-4">Availability</p>
