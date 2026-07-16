@@ -6,6 +6,7 @@ import { site } from "@/data/site";
 
 const navItems = [
   ["Live", "#why"],
+  ["Story", "#story"],
   ["Gallery", "#gallery"],
   ["Band", "#band"],
   ["Unplugged", "#unplugged"],

@@ -21,7 +21,7 @@ export function BookingForm() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Facebook
+              Follow 2HD on Facebook
             </a>
             <a
               className="button-secondary"
