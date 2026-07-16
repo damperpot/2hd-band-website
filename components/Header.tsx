@@ -6,13 +6,12 @@ import { site } from "@/data/site";
 
 const navItems = [
   ["Live", "#why"],
-  ["Story", "#story"],
+  ["Watch", "#watch"],
+  ["Shows", "#shows"],
   ["Gallery", "#gallery"],
   ["Band", "#band"],
   ["Unplugged", "#unplugged"],
-  ["Songs", "#songs"],
-  ["Availability", "#availability"],
-  ["Book", "#book"]
+  ["Songs", "#songs"]
 ];
 
 export function Header() {
@@ -38,7 +37,7 @@ export function Header() {
         <a className="flex items-center gap-3" href="#home" onClick={() => setOpen(false)}>
           <span className="relative h-10 w-10 md:h-12 md:w-12">
             <Image
-              src="/assets/logo/2hd-energy-ring.png"
+              src="/assets/logo/2hd-energy-ring-web-alpha.png"
               alt={site.name}
               fill
               sizes="48px"
@@ -60,7 +59,7 @@ export function Header() {
           <span className="h-0.5 w-5 bg-white" />
         </button>
         <nav
-          className={`absolute inset-x-0 top-16 grid gap-1 border-b border-white/10 bg-ink p-4 md:static md:flex md:border-0 md:bg-transparent md:p-0 ${
+          className={`absolute inset-x-0 top-16 grid gap-1 border-b border-white/10 bg-ink p-4 md:static md:flex md:items-center md:border-0 md:bg-transparent md:p-0 ${
             open ? "grid" : "hidden md:flex"
           }`}
           aria-label="Main navigation"
@@ -75,6 +74,13 @@ export function Header() {
               {label}
             </a>
           ))}
+          <a
+            className="header-book-cta"
+            href="#book"
+            onClick={() => setOpen(false)}
+          >
+            Book
+          </a>
         </nav>
       </div>
     </header>

@@ -1,11 +1,10 @@
-import Image from "next/image";
 import { site } from "@/data/site";
 
 export function CinematicHero() {
   return (
     <section id="home" className="hero-stage relative min-h-screen overflow-hidden bg-black">
       <video
-        className="hero-video absolute inset-0 h-full w-full object-cover"
+        className="hero-video image-treated-media absolute inset-0 h-full w-full object-cover"
         autoPlay
         muted
         loop
@@ -15,19 +14,25 @@ export function CinematicHero() {
       >
         <source src="/assets/video/promo.mp4" type="video/mp4" />
       </video>
+      <div className="ember-field" aria-hidden="true">
+        {Array.from({ length: 14 }).map((_, index) => (
+          <span key={index} />
+        ))}
+      </div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,104,116,0.2),transparent_34%),linear-gradient(180deg,rgba(0,0,0,0.78),rgba(9,9,9,0.48)_45%,#090909_100%)]" />
+      <div className="hero-haze" aria-hidden="true" />
 
       <div className="section-shell relative z-10 flex min-h-screen flex-col items-center justify-center px-0 pb-24 pt-28 text-center">
         <div className="hero-logo-reveal relative mb-7 h-[min(45vw,270px)] w-[min(45vw,270px)]">
-          <div className="absolute inset-3 rounded-full bg-rose/10 blur-3xl" />
-          <Image
-            src="/assets/logo/2hd-energy-ring.png"
-            alt="2HD"
-            fill
-            sizes="(min-width: 768px) 340px, 58vw"
-            className="object-contain drop-shadow-[0_0_42px_rgba(255,255,255,0.18)]"
-            priority
-          />
+          <div className="hero-forge-ring" aria-hidden="true" />
+          <div className="hero-sparks" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+            <span />
+            <span />
+          </div>
+          <div className="hero-logo-image" role="img" aria-label="2HD" />
         </div>
 
         <p className="hero-tagline display-heading max-w-5xl text-[clamp(3.4rem,9vw,7.8rem)] text-white">

@@ -145,9 +145,9 @@ export default function Home() {
               <p className="eyebrow mb-4">Watch us live</p>
               <h2 className="display-heading text-6xl md:text-8xl">Proof in the room.</h2>
             </div>
-            <div className="watch-panel relative overflow-hidden bg-black shadow-glow">
+            <div className="watch-panel image-treatment relative overflow-hidden bg-black shadow-glow">
               <video
-                className="aspect-video w-full object-cover"
+                className="image-treated-media aspect-video w-full object-cover"
                 controls
                 playsInline
                 preload="metadata"
@@ -165,19 +165,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="story" className="story-band bg-ink py-20 md:py-32">
-          <div className="section-shell grid gap-12 lg:grid-cols-[0.72fr_1.28fr]">
-            <div>
-              <p className="eyebrow mb-4">About 2HD</p>
-              <h2 className="display-heading text-6xl md:text-8xl">The Story</h2>
-            </div>
-            <div className="story-copy">
-              {biography.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </div>
-          </div>
-        </section>
+        <Availability gigs={gigs} />
 
         <section id="gallery" className="bg-ink py-20 md:py-32">
           <div className="section-shell">
@@ -194,7 +182,7 @@ export default function Home() {
             <div className="gallery-editorial grid auto-rows-auto gap-4 md:grid-cols-3">
               {galleryImages.map((image) => (
                 <div
-                  className={`image-frame relative overflow-hidden bg-charcoal ${image.className}`}
+                  className={`image-frame image-treatment relative overflow-hidden bg-charcoal ${image.className}`}
                   key={image.src}
                 >
                   <Image
@@ -218,7 +206,10 @@ export default function Home() {
             </div>
             <div className="grid gap-4 md:grid-cols-4">
               {bandPanels.map((member) => (
-                <article className="band-panel image-frame relative aspect-[4/5] overflow-hidden" key={member.name}>
+                <article
+                  className="band-panel image-frame image-treatment relative aspect-[4/5] overflow-hidden"
+                  key={member.name}
+                >
                   <Image
                     src={member.image}
                     alt={`${member.name} of 2HD performing live`}
@@ -241,7 +232,7 @@ export default function Home() {
 
         <section id="unplugged" className="unplugged-band py-20 md:py-32">
           <div className="section-shell grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-center">
-            <div className="relative aspect-[4/5] overflow-hidden md:aspect-[5/4]">
+            <div className="image-treatment image-treatment-warm relative aspect-[4/5] overflow-hidden md:aspect-[5/4]">
               <Image
                 src="/assets/images/gallery-crick-stage.jpg"
                 alt="2HD performing an outdoor live set"
@@ -265,8 +256,36 @@ export default function Home() {
         </section>
 
         <SongExplorer songs={songs} />
-        <Availability gigs={gigs} />
+        <section id="availability" className="availability-bridge bg-ink py-16 md:py-24">
+          <div className="section-shell grid gap-6 md:grid-cols-[0.9fr_auto] md:items-center">
+            <div>
+              <p className="eyebrow mb-4">Availability</p>
+              <h2 className="display-heading text-5xl md:text-7xl">Ready to check a date?</h2>
+              <p className="mt-4 max-w-2xl text-lg leading-8 text-fog">
+                Tell us when and where you&apos;re planning the night, and we&apos;ll come back with
+                availability for the full electric band or 2HD Unplugged.
+              </p>
+            </div>
+            <a className="button-primary" href="#book">
+              Book 2HD
+            </a>
+          </div>
+        </section>
         <BookingForm />
+
+        <section id="story" className="story-band bg-ink py-20 md:py-32">
+          <div className="section-shell grid gap-12 lg:grid-cols-[0.72fr_1.28fr]">
+            <div>
+              <p className="eyebrow mb-4">About 2HD</p>
+              <h2 className="display-heading text-6xl md:text-8xl">The Story</h2>
+            </div>
+            <div className="story-copy">
+              {biography.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
       <footer className="border-t border-white/10 bg-black py-8">
         <div className="section-shell flex flex-col justify-between gap-4 text-sm text-fog md:flex-row">
