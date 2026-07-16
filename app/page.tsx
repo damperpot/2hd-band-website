@@ -10,14 +10,19 @@ const genres = Array.from(new Set(songs.map((song) => song.genre))).sort();
 
 const galleryImages = [
   {
+    src: "/assets/images/group-backstage.jpg",
+    alt: "The four members of 2HD together backstage after a live show",
+    className: "md:col-span-2 md:row-span-2 aspect-[16/11]"
+  },
+  {
     src: "/assets/images/gallery-full-band.jpg",
     alt: "2HD performing live as a four-piece band",
-    className: "md:col-span-2 md:row-span-2 aspect-[16/11]"
+    className: "aspect-[4/5]"
   },
   {
     src: "/assets/images/gallery-black-white.jpg",
     alt: "2HD vocalist and guitarist performing in black and white",
-    className: "aspect-[4/5]"
+    className: "aspect-[5/4]"
   },
   {
     src: "/assets/images/gallery-stage-wide.jpg",
@@ -45,22 +50,26 @@ const bandPanels = [
   {
     ...bandMembers[0],
     role: "Vocals",
-    image: "/assets/images/gallery-black-white.jpg"
+    image: "/assets/images/member-cleo.jpg",
+    imageClassName: "object-cover"
   },
   {
     ...bandMembers[1],
     role: "Guitar & Backing Vocals",
-    image: "/assets/images/gallery-full-band.jpg"
+    image: "/assets/images/member-john.jpg",
+    imageClassName: "object-cover object-top"
   },
   {
     ...bandMembers[2],
     role: "Drums",
-    image: "/assets/images/hero-poster.jpg"
+    image: "/assets/images/member-dave.jpg",
+    imageClassName: "object-cover"
   },
   {
     ...bandMembers[3],
     role: "Bass, Backing Vocals & Keys",
-    image: "/assets/images/gallery-bass.jpg"
+    image: "/assets/images/gallery-bass.jpg",
+    imageClassName: "object-cover"
   }
 ];
 
@@ -181,7 +190,7 @@ export default function Home() {
                     alt={`${member.name} of 2HD performing live`}
                     fill
                     sizes="(min-width: 768px) 25vw, 100vw"
-                    className="object-cover"
+                    className={member.imageClassName}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-5">
