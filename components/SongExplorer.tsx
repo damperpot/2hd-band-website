@@ -3,11 +3,15 @@
 import { useMemo, useState } from "react";
 import type { Song } from "@/data/site";
 
-const filters = ["All", "Rock", "Punk", "Indie", "New Wave", "Alternative Pop"];
-
 export function SongExplorer({ songs }: { songs: Song[] }) {
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState("All");
+
+  const filters = useMemo(() => {
+    const genres = Array.from(new Set(songs.map((song) => song.genre))).sort();
+
+    return ["All", ...genres];
+  }, [songs]);
 
   const visibleSongs = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();

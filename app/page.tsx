@@ -5,7 +5,7 @@ import { Header } from "@/components/Header";
 import { SongExplorer } from "@/components/SongExplorer";
 import { bandMembers, gigs, site, songs } from "@/data/site";
 
-const genres = ["Rock", "Punk", "Indie", "New Wave", "Alternative Pop"];
+const genres = Array.from(new Set(songs.map((song) => song.genre))).sort();
 
 const galleryImages = [
   {
