@@ -1,8 +1,12 @@
+import gigsRemaining2026 from "./2hd-gigs-remaining-2026.json";
+
 export type Gig = {
   date: string;
-  venue: string;
-  location: string;
-  status: "Available" | "Public gig" | "Booked";
+  title: string;
+  venue: string | null;
+  type: "Electric" | "Unplugged" | "Private function";
+  public: boolean;
+  time?: string;
 };
 
 export type Song = {
@@ -19,7 +23,7 @@ export const site = {
   domain: "https://2hdband.co.uk",
   email: "bookings@2hdband.co.uk",
   socials: {
-    facebook: "https://www.facebook.com/",
+    facebook: "https://www.facebook.com/2ndhanddaylight/about",
     instagram: "https://www.instagram.com/",
     youtube: "https://www.youtube.com/"
   }
@@ -32,26 +36,7 @@ export const bandMembers = [
   { name: "Andy", role: "Bass / Backing Vocals / Keys" }
 ];
 
-export const gigs: Gig[] = [
-  {
-    date: "2026-08-15",
-    venue: "Venue name to confirm",
-    location: "West Northamptonshire",
-    status: "Public gig"
-  },
-  {
-    date: "2026-09-12",
-    venue: "Private function",
-    location: "Details withheld",
-    status: "Booked"
-  },
-  {
-    date: "2026-10-04",
-    venue: "Venue name to confirm",
-    location: "West Northamptonshire",
-    status: "Public gig"
-  }
-];
+export const gigs = gigsRemaining2026 as Gig[];
 
 export const songs: Song[] = [
   { title: "20th Century Boy", artist: "T. Rex", genre: "Rock", decade: "1970s" },

@@ -1,0 +1,102 @@
+[
+  {
+    "date": "2026-07-24",
+    "title": "2HD at The Ale Pole",
+    "venue": "The Ale Pole",
+    "type": "Electric",
+    "public": true
+  },
+  {
+    "date": "2026-07-25",
+    "title": "2HD at The Royal Oak, Crick",
+    "venue": "The Royal Oak, Crick",
+    "type": "Electric",
+    "public": true,
+    "time": "19:00"
+  },
+  {
+    "date": "2026-08-21",
+    "title": "2HD at CA Cars, Wigston",
+    "venue": "CA Cars, Wigston",
+    "type": "Electric",
+    "public": true,
+    "time": "18:00"
+  },
+  {
+    "date": "2026-08-29",
+    "title": "2HD Unplugged at The Goat",
+    "venue": "The Goat",
+    "type": "Unplugged",
+    "public": true
+  },
+  {
+    "date": "2026-09-05",
+    "title": "2HD at The Wig & Pen, Northampton",
+    "venue": "The Wig & Pen, Northampton",
+    "type": "Electric",
+    "public": true
+  },
+  {
+    "date": "2026-09-12",
+    "title": "2HD in Crick",
+    "venue": "Crick",
+    "type": "Electric",
+    "public": true
+  },
+  {
+    "date": "2026-10-03",
+    "title": "Private function",
+    "venue": null,
+    "type": "Private function",
+    "public": false
+  },
+  {
+    "date": "2026-10-16",
+    "title": "2HD at Grange Park",
+    "venue": "Grange Park",
+    "type": "Electric",
+    "public": true
+  },
+  {
+    "date": "2026-10-17",
+    "title": "2HD in Bozeat",
+    "venue": "Bozeat",
+    "type": "Electric",
+    "public": true
+  },
+  {
+    "date": "2026-11-14",
+    "title": "2HD Unplugged at The Goat",
+    "venue": "The Goat",
+    "type": "Unplugged",
+    "public": true
+  },
+  {
+    "date": "2026-11-21",
+    "title": "2HD at SVC",
+    "venue": "SVC",
+    "type": "Electric",
+    "public": true
+  },
+  {
+    "date": "2026-11-28",
+    "title": "2HD at The Nelson Club, Stockton",
+    "venue": "The Nelson Club, Stockton",
+    "type": "Electric",
+    "public": true
+  },
+  {
+    "date": "2026-12-11",
+    "title": "2HD at The Ale Pole",
+    "venue": "The Ale Pole",
+    "type": "Electric",
+    "public": true
+  },
+  {
+    "date": "2026-12-31",
+    "title": "New Year's Eve at Crick Ex-Servicemen's Club",
+    "venue": "Crick Ex-Servicemen's Club",
+    "type": "Electric",
+    "public": true
+  }
+]

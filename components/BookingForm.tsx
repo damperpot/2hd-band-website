@@ -15,10 +15,20 @@ export function BookingForm() {
             <a className="button-secondary" href={`mailto:${site.email}`}>
               {site.email}
             </a>
-            <a className="button-secondary" href={site.socials.facebook}>
+            <a
+              className="button-secondary"
+              href={site.socials.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Facebook
             </a>
-            <a className="button-secondary" href={site.socials.instagram}>
+            <a
+              className="button-secondary"
+              href={site.socials.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Instagram
             </a>
           </div>

@@ -250,6 +250,86 @@ body {
     #090909;
 }
 
+.show-timeline {
+  position: relative;
+  display: grid;
+  gap: 2.5rem;
+}
+
+.show-month {
+  border-top: 1px solid rgb(255 255 255 / 12%);
+  padding-top: 1.5rem;
+}
+
+.show-card {
+  display: grid;
+  grid-template-columns: 4.4rem minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
+  border: 1px solid rgb(255 255 255 / 10%);
+  background:
+    linear-gradient(135deg, rgb(255 255 255 / 5%), transparent 56%),
+    #111111;
+  padding: 1rem;
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.show-card:hover {
+  border-color: rgb(212 104 116 / 48%);
+  transform: translateY(-1px);
+}
+
+.show-date-tile {
+  display: grid;
+  min-height: 4.4rem;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 12%);
+  background: #090909;
+  text-align: center;
+}
+
+.show-date-tile span,
+.show-badge {
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.show-date-tile span {
+  color: #d46874;
+}
+
+.show-date-tile strong {
+  display: block;
+  font-family: var(--font-heading), Impact, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 400;
+  line-height: 0.8;
+}
+
+.show-badge {
+  grid-column: 2;
+  width: fit-content;
+  border: 1px solid;
+  padding: 0.48rem 0.62rem;
+}
+
+@media (min-width: 640px) {
+  .show-card {
+    grid-template-columns: 4.8rem minmax(0, 1fr) auto;
+    gap: 1.25rem;
+    padding: 1.15rem;
+  }
+
+  .show-badge {
+    grid-column: auto;
+  }
+}
+
 @keyframes logoReveal {
   0% {
     opacity: 0;
