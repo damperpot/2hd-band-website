@@ -80,6 +80,15 @@ const bandPanels = [
   }
 ];
 
+const biography = [
+  "2HD is a four-piece live band based in West Northamptonshire, delivering energetic performances that blend rock, punk, indie, new wave and alternative pop. Formed in 2019 and established in its current line-up since 2023, the band performs between 25 and 45 shows each year across pubs, clubs, festivals and private functions.",
+  "The name 2HD is a nod to Secondhand Daylight, the influential 1979 album by post-punk pioneers Magazine. The band originally performed Magazine's classic Shot by Both Sides, and the name remains a tribute to those alternative roots that continue to influence their musical style today.",
+  "Combining well-loved classics with songs audiences had forgotten they loved, 2HD has built a reputation for delivering fresh, energetic live performances that stand out from the usual covers-band repertoire. Drawing inspiration from rock, punk, new wave, indie and alternative pop, every set is carefully crafted to keep audiences singing, dancing and engaged from the first song to the last.",
+  "At the heart of 2HD is a classic four-piece line-up: powerful vocals, driving guitars, solid bass and dynamic drums. The result is an authentic live sound with plenty of energy, delivered with the musicianship and professionalism that has helped the band build a loyal following across the Midlands.",
+  "Alongside its full electric show, 2HD also offers 2HD Unplugged, reimagining rock and pop favourites with a more relaxed, intimate feel. It's an ideal option for pubs, beer gardens, private functions and occasions where a stripped-back atmosphere is the perfect fit.",
+  "Whether performing an energetic Saturday night show or a laid-back acoustic session, 2HD's aim is always the same: to deliver memorable live music, create a fantastic atmosphere and leave audiences wanting one more song."
+];
+
 export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -104,24 +113,28 @@ export default function Home() {
         <CinematicHero />
 
         <section id="why" className="section-band bg-ink py-20 md:py-32">
-          <div className="section-shell grid gap-12 md:grid-cols-[0.95fr_1.05fr] md:items-end">
+          <div className="section-shell grid gap-10 md:grid-cols-[0.95fr_1.05fr] md:items-end">
             <div>
-              <p className="eyebrow mb-4">Live</p>
+              <p className="eyebrow mb-4">Why 2HD?</p>
               <h2 className="display-heading max-w-2xl text-6xl md:text-8xl">
                 Not just another covers band.
               </h2>
             </div>
-            <div className="statement-grid">
-              {[
-                "Songs audiences had forgotten they loved",
-                "Rock, punk, indie, new wave and alternative pop",
-                "25-45 live shows each year",
-                "Full electric show or 2HD Unplugged"
-              ].map((statement) => (
-                <p className="statement" key={statement}>
-                  {statement}
-                </p>
-              ))}
+            <div className="why-copy">
+              <p>
+                Combining well-loved classics with songs audiences had forgotten they loved, 2HD
+                delivers a fresh, energetic live show that keeps audiences singing, dancing and
+                coming back for more.
+              </p>
+              <div className="mt-8 grid gap-1 sm:grid-cols-3">
+                {["Rock / punk / indie", "25-45 shows each year", "Electric or Unplugged"].map(
+                  (item) => (
+                    <span className="why-pill" key={item}>
+                      {item}
+                    </span>
+                  )
+                )}
+              </div>
             </div>
           </div>
         </section>
@@ -148,6 +161,20 @@ export default function Home() {
                   Four-piece live band. Familiar songs. Real stage energy.
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="story" className="story-band bg-ink py-20 md:py-32">
+          <div className="section-shell grid gap-12 lg:grid-cols-[0.72fr_1.28fr]">
+            <div>
+              <p className="eyebrow mb-4">About 2HD</p>
+              <h2 className="display-heading text-6xl md:text-8xl">The Story</h2>
+            </div>
+            <div className="story-copy">
+              {biography.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
             </div>
           </div>
         </section>
@@ -226,11 +253,12 @@ export default function Home() {
             </div>
             <div>
               <p className="eyebrow mb-4 text-[#d7a86e]">2HD Unplugged</p>
-              <h2 className="display-heading text-6xl md:text-8xl">The same songs, closer.</h2>
+              <h2 className="display-heading text-6xl md:text-8xl">The same songs. Closer.</h2>
               <p>
-                2HD Unplugged is the acoustic version of 2HD, reimagining rock and pop favourites
-                with a relaxed, intimate feel for pubs, beer gardens, parties and private
-                functions.
+                Sometimes the best songs don&apos;t need to be louder - just played differently. 2HD
+                Unplugged strips everything back to create a relaxed, intimate performance that&apos;s
+                perfect for pubs, beer gardens, parties and private functions, while still
+                delivering the musicianship and audience interaction that defines every 2HD show.
               </p>
             </div>
           </div>
@@ -251,7 +279,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Facebook
+              Follow 2HD on Facebook
             </a>
           </div>
         </div>

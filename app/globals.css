@@ -186,6 +186,59 @@ body {
   line-height: 1.18;
 }
 
+.why-copy {
+  border-top: 1px solid rgb(255 255 255 / 12%);
+  padding-top: 1.5rem;
+}
+
+.why-copy p {
+  color: #ffffff;
+  font-size: clamp(1.18rem, 2.4vw, 1.7rem);
+  font-weight: 900;
+  line-height: 1.28;
+}
+
+.why-pill {
+  display: flex;
+  min-height: 4.25rem;
+  align-items: center;
+  border: 1px solid rgb(255 255 255 / 10%);
+  background: #111111;
+  padding: 1rem;
+  color: #c8c8c8;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.story-band {
+  background:
+    radial-gradient(circle at 84% 16%, rgb(212 104 116 / 10%), transparent 34%),
+    #090909;
+}
+
+.story-copy {
+  display: grid;
+  gap: 1.15rem;
+  border-block: 1px solid rgb(255 255 255 / 10%);
+  padding-block: 1.5rem;
+}
+
+.story-copy p {
+  margin: 0;
+  color: #c8c8c8;
+  font-size: clamp(1.02rem, 1.7vw, 1.2rem);
+  line-height: 1.78;
+}
+
+.story-copy p:first-child {
+  color: #ffffff;
+  font-size: clamp(1.16rem, 2vw, 1.42rem);
+  font-weight: 800;
+  line-height: 1.55;
+}
+
 .watch-panel,
 .image-frame {
   border: 1px solid rgb(255 255 255 / 10%);
