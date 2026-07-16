@@ -12,37 +12,44 @@ const galleryImages = [
   {
     src: "/assets/images/group-backstage.jpg",
     alt: "The four members of 2HD together backstage after a live show",
-    className: "md:col-span-2 md:row-span-2 aspect-[16/11]"
+    className: "md:col-span-2 md:row-span-2 aspect-[16/11]",
+    imageClassName: "object-cover"
   },
   {
     src: "/assets/images/gallery-full-band.jpg",
     alt: "2HD performing live as a four-piece band",
-    className: "aspect-[4/5]"
+    className: "aspect-[4/5]",
+    imageClassName: "object-cover"
   },
   {
     src: "/assets/images/gallery-black-white.jpg",
     alt: "2HD vocalist and guitarist performing in black and white",
-    className: "aspect-[5/4]"
+    className: "aspect-[5/4]",
+    imageClassName: "object-cover"
   },
   {
     src: "/assets/images/gallery-stage-wide.jpg",
     alt: "2HD performing on an outdoor stage",
-    className: "aspect-[5/4]"
+    className: "aspect-[5/4]",
+    imageClassName: "object-cover"
   },
   {
     src: "/assets/images/gallery-crick-stage.jpg",
     alt: "2HD performing at an outdoor event stage",
-    className: "aspect-[4/3]"
+    className: "aspect-[4/3]",
+    imageClassName: "object-cover"
   },
   {
     src: "/assets/images/gallery-bass.jpg",
     alt: "2HD bassist performing live",
-    className: "md:col-span-2 aspect-[16/9]"
+    className: "md:col-span-2 aspect-[16/9]",
+    imageClassName: "object-cover object-top"
   },
   {
     src: "/assets/images/hero-poster.jpg",
     alt: "2HD branded drum kit under purple stage lighting",
-    className: "aspect-[4/5]"
+    className: "aspect-[4/5]",
+    imageClassName: "object-cover"
   }
 ];
 
@@ -69,7 +76,7 @@ const bandPanels = [
     ...bandMembers[3],
     role: "Bass, Backing Vocals & Keys",
     image: "/assets/images/gallery-bass.jpg",
-    imageClassName: "object-cover"
+    imageClassName: "object-cover object-top"
   }
 ];
 
@@ -168,7 +175,7 @@ export default function Home() {
                     alt={image.alt}
                     fill
                     sizes="(min-width: 768px) 33vw, 100vw"
-                    className="object-cover"
+                    className={image.imageClassName}
                   />
                 </div>
               ))}
@@ -236,7 +243,17 @@ export default function Home() {
       <footer className="border-t border-white/10 bg-black py-8">
         <div className="section-shell flex flex-col justify-between gap-4 text-sm text-fog md:flex-row">
           <span>&copy; {new Date().getFullYear()} {site.fullName}</span>
-          <span>{site.tagline}</span>
+          <div className="flex flex-wrap gap-x-5 gap-y-2">
+            <span>{site.tagline}</span>
+            <a
+              className="font-bold text-white transition hover:text-rose"
+              href={site.socials.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Facebook
+            </a>
+          </div>
         </div>
       </footer>
     </>
