@@ -12,40 +12,40 @@ export function BookingForm() {
             enquiry can be handled properly.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a className="rounded-sm border border-white/10 px-4 py-3 font-black text-fog" href={`mailto:${site.email}`}>
+            <a className="button-secondary" href={`mailto:${site.email}`}>
               {site.email}
             </a>
-            <a className="rounded-sm border border-white/10 px-4 py-3 font-black text-fog" href={site.socials.facebook}>
+            <a className="button-secondary" href={site.socials.facebook}>
               Facebook
             </a>
-            <a className="rounded-sm border border-white/10 px-4 py-3 font-black text-fog" href={site.socials.instagram}>
+            <a className="button-secondary" href={site.socials.instagram}>
               Instagram
             </a>
           </div>
         </div>
         <form
-          className="glass-line grid gap-5 rounded-sm p-5 md:p-7"
+          className="grid gap-5 border-y border-white/10 py-6 md:py-8"
           action={`mailto:${site.email}`}
           method="post"
           encType="text/plain"
         >
           <label className="grid gap-2 text-sm font-bold uppercase tracking-wide text-fog">
             Name
-            <input className="min-h-12 rounded-sm border border-white/10 bg-white/5 px-4 text-base normal-case tracking-normal text-white outline-none focus:border-rose" name="name" required />
+            <input className="min-h-12 border-0 border-b border-white/20 bg-transparent px-0 text-base normal-case tracking-normal text-white outline-none focus:border-rose" name="name" required />
           </label>
           <label className="grid gap-2 text-sm font-bold uppercase tracking-wide text-fog">
             Email
-            <input className="min-h-12 rounded-sm border border-white/10 bg-white/5 px-4 text-base normal-case tracking-normal text-white outline-none focus:border-rose" name="email" type="email" required />
+            <input className="min-h-12 border-0 border-b border-white/20 bg-transparent px-0 text-base normal-case tracking-normal text-white outline-none focus:border-rose" name="email" type="email" required />
           </label>
           <label className="grid gap-2 text-sm font-bold uppercase tracking-wide text-fog">
             Event date
-            <input className="min-h-12 rounded-sm border border-white/10 bg-white/5 px-4 text-base normal-case tracking-normal text-white outline-none focus:border-rose" name="event-date" type="date" />
+            <input className="min-h-12 border-0 border-b border-white/20 bg-transparent px-0 text-base normal-case tracking-normal text-white outline-none focus:border-rose" name="event-date" type="date" />
           </label>
           <label className="grid gap-2 text-sm font-bold uppercase tracking-wide text-fog">
             Message
-            <textarea className="min-h-36 rounded-sm border border-white/10 bg-white/5 px-4 py-3 text-base normal-case tracking-normal text-white outline-none focus:border-rose" name="message" required />
+            <textarea className="min-h-36 border-0 border-b border-white/20 bg-transparent px-0 py-3 text-base normal-case tracking-normal text-white outline-none focus:border-rose" name="message" required />
           </label>
-          <button className="min-h-12 rounded-sm bg-rose px-5 text-sm font-black uppercase tracking-wide text-white" type="submit">
+          <button className="button-primary w-fit bg-rose text-white hover:bg-white hover:text-ink" type="submit">
             Book 2HD
           </button>
         </form>
