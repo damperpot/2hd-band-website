@@ -35,10 +35,14 @@ export function BookingForm() {
         </div>
         <form
           className="grid gap-5 border-y border-white/10 py-6 md:py-8"
-          action={`mailto:${site.email}`}
+          action={`https://formsubmit.co/${site.email}`}
           method="post"
-          encType="text/plain"
         >
+          <input type="hidden" name="_subject" value="New 2HD booking enquiry" />
+          <input type="hidden" name="_next" value={`${site.domain}/thanks/`} />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input className="hidden" type="text" name="_honey" tabIndex={-1} autoComplete="off" />
           <label className="grid gap-2 text-sm font-bold uppercase tracking-wide text-fog">
             Name
             <input className="min-h-12 border-0 border-b border-white/20 bg-transparent px-0 text-base normal-case tracking-normal text-white outline-none focus:border-rose" name="name" required />
@@ -49,7 +53,23 @@ export function BookingForm() {
           </label>
           <label className="grid gap-2 text-sm font-bold uppercase tracking-wide text-fog">
             Event date
-            <input className="min-h-12 border-0 border-b border-white/20 bg-transparent px-0 text-base normal-case tracking-normal text-white outline-none focus:border-rose" name="event-date" type="date" />
+            <input className="min-h-12 border-0 border-b border-white/20 bg-transparent px-0 text-base normal-case tracking-normal text-white outline-none focus:border-rose" name="Event date" type="date" />
+          </label>
+          <label className="grid gap-2 text-sm font-bold uppercase tracking-wide text-fog">
+            Venue and location
+            <input className="min-h-12 border-0 border-b border-white/20 bg-transparent px-0 text-base normal-case tracking-normal text-white outline-none focus:border-rose" name="Venue and location" />
+          </label>
+          <label className="grid gap-2 text-sm font-bold uppercase tracking-wide text-fog">
+            Event type
+            <select className="min-h-12 border-0 border-b border-white/20 bg-charcoal px-0 text-base normal-case tracking-normal text-white outline-none focus:border-rose" name="Event type" defaultValue="">
+              <option value="" disabled>Select an event type</option>
+              <option>Pub or club</option>
+              <option>Wedding</option>
+              <option>Private party</option>
+              <option>Festival</option>
+              <option>Corporate event</option>
+              <option>Other</option>
+            </select>
           </label>
           <label className="grid gap-2 text-sm font-bold uppercase tracking-wide text-fog">
             Message
