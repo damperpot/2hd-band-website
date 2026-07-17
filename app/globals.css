@@ -443,6 +443,11 @@ body {
   min-height: 21rem;
 }
 
+.image-treatment.band-panel > h3,
+.image-treatment.band-panel > p {
+  position: absolute;
+}
+
 @media (min-width: 768px) {
   .gallery-editorial .image-frame {
     min-height: 18rem;
