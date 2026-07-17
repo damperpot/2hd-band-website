@@ -10,6 +10,7 @@ build/
 
 *.tsbuildinfo
 .pnpm-store/
+.tools/
 
 npm-debug.log*
 yarn-debug.log*

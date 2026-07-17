@@ -1,4 +1,4 @@
-import gigsRemaining2026 from "./2hd-gigs-remaining-2026.json";
+import calendarGigs from "./2hd-gigs-remaining-2026.json";
 
 export type Gig = {
   date: string;
@@ -36,7 +36,7 @@ export const bandMembers = [
   { name: "Andy", role: "Bass / Backing Vocals / Keys" }
 ];
 
-export const gigs = gigsRemaining2026 as Gig[];
+export const gigs = calendarGigs as Gig[];
 
 export const songs: Song[] = [
   { title: "20th Century Boy", artist: "T. Rex", genre: "Rock", decade: "1970s" },
