@@ -2,6 +2,12 @@
 
 Premium static website for 2HD (2nd Hand Daylight), built with Next.js, React, TypeScript, and Tailwind CSS for deployment to GitHub Pages.
 
+## Calendar Data
+
+The public Upcoming Shows section reads `data/2hd-gigs-remaining-2026.json`. This file is reviewed from the band's TimeTree export and includes public/private status so private functions remain hidden from visitors.
+
+The separate 2HD calendar analyser produces the source report used to review gigs and band availability. Internal holidays, busy dates, free Saturdays and John's conditional Friday availability must never be copied into public website data.
+
 ## Local Development
 
 ```bash

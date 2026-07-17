@@ -98,5 +98,26 @@
     "venue": "Crick Ex-Servicemen's Club",
     "type": "Electric",
     "public": true
+  },
+  {
+    "date": "2027-04-16",
+    "title": "Private function",
+    "venue": null,
+    "type": "Private function",
+    "public": false
+  },
+  {
+    "date": "2027-06-18",
+    "title": "2HD at Southam Solstice Festival",
+    "venue": "Southam Solstice Festival",
+    "type": "Electric",
+    "public": true
+  },
+  {
+    "date": "2027-07-10",
+    "title": "2HD at Crick Scarecrow Weekend",
+    "venue": "Crick Scarecrow Weekend",
+    "type": "Electric",
+    "public": true
   }
 ]
