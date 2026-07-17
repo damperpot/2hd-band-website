@@ -232,10 +232,10 @@ export default function Home() {
 
         <section id="unplugged" className="unplugged-band py-20 md:py-32">
           <div className="section-shell grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-center">
-            <div className="image-treatment image-treatment-warm relative aspect-[4/5] overflow-hidden md:aspect-[5/4]">
+            <div className="image-treatment image-treatment-warm relative aspect-[4/3] overflow-hidden md:aspect-video">
               <Image
-                src="/assets/images/gallery-crick-stage.jpg"
-                alt="2HD performing an outdoor live set"
+                src="/assets/images/2hd-unplugged-cleaned.png"
+                alt="2HD Unplugged performing an intimate acoustic set"
                 fill
                 sizes="(min-width: 768px) 45vw, 100vw"
                 className="object-cover"
