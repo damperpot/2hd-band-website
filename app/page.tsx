@@ -22,8 +22,8 @@ const galleryImages = [
     imageClassName: "object-cover"
   },
   {
-    src: "/assets/images/gallery-black-white.jpg",
-    alt: "2HD vocalist and guitarist performing in black and white",
+    src: "/assets/images/gallery-cleo-crick-2026.jpg",
+    alt: "Cleo singing with 2HD at Crick Music Festival",
     className: "aspect-[5/4]",
     imageClassName: "object-cover"
   },
@@ -46,8 +46,8 @@ const galleryImages = [
     imageClassName: "object-cover object-top"
   },
   {
-    src: "/assets/images/hero-poster.jpg",
-    alt: "2HD branded drum kit under purple stage lighting",
+    src: "/assets/images/gallery-crick-live-2026.jpg",
+    alt: "2HD performing live at Crick Music Festival in 2026",
     className: "aspect-[4/5]",
     imageClassName: "object-cover"
   }
@@ -217,13 +217,13 @@ export default function Home() {
                     sizes="(min-width: 768px) 25vw, 100vw"
                     className={member.imageClassName}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-5">
-                    <h3 className="display-heading text-5xl">{member.name}</h3>
-                    <p className="mt-2 text-sm font-black uppercase tracking-wide text-fog">
-                      {member.role}
-                    </p>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/72 via-transparent to-black/80" />
+                  <h3 className="display-heading absolute inset-x-0 top-0 p-5 text-5xl drop-shadow-lg">
+                    {member.name}
+                  </h3>
+                  <p className="absolute inset-x-0 bottom-0 p-5 text-sm font-black uppercase tracking-wide text-white drop-shadow-lg">
+                    {member.role}
+                  </p>
                 </article>
               ))}
             </div>
