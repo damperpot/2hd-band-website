@@ -18,26 +18,26 @@ const galleryImages = [
     imageClassName: "object-cover"
   },
   {
-    src: "/assets/images/gallery-full-band.jpg",
-    alt: "2HD performing live as a four-piece band",
+    src: "/assets/images/gallery-rugby-live.jpg",
+    alt: "2HD giving an energetic full-band performance on an outdoor stage",
     className: "aspect-[4/5]",
     imageClassName: "object-cover"
   },
   {
-    src: "/assets/images/gallery-cleo-crick-2026.jpg",
-    alt: "Cleo singing with 2HD at Crick Music Festival",
+    src: "/assets/images/gallery-cleo-club.jpg",
+    alt: "Cleo smiling while performing with 2HD at an intimate club show",
     className: "aspect-[5/4]",
     imageClassName: "object-cover"
   },
   {
-    src: "/assets/images/gallery-stage-wide.jpg",
-    alt: "2HD performing on an outdoor stage",
+    src: "/assets/images/gallery-night-stage.jpg",
+    alt: "2HD performing to a crowd under warm stage lights",
     className: "aspect-[5/4]",
     imageClassName: "object-cover"
   },
   {
-    src: "/assets/images/gallery-crick-stage.jpg",
-    alt: "2HD performing at an outdoor event stage",
+    src: "/assets/images/gallery-club-live.jpg",
+    alt: "2HD playing a lively indoor show in front of the crowd",
     className: "aspect-[4/3]",
     imageClassName: "object-cover"
   },
@@ -48,8 +48,8 @@ const galleryImages = [
     imageClassName: "object-cover object-top"
   },
   {
-    src: "/assets/images/gallery-crick-live-2026.jpg",
-    alt: "2HD performing live at Crick Music Festival in 2026",
+    src: "/assets/images/gallery-john-club.jpg",
+    alt: "John playing guitar with 2HD under red club lighting",
     className: "aspect-[4/5]",
     imageClassName: "object-cover"
   }
