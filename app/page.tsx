@@ -60,25 +60,29 @@ const bandPanels = [
     ...bandMembers[0],
     role: "Vocals",
     image: "/assets/images/member-cleo.jpg",
-    imageClassName: "object-cover"
+    imageClassName: "object-cover",
+    treatmentClassName: ""
   },
   {
     ...bandMembers[1],
     role: "Guitar & Backing Vocals",
     image: "/assets/images/member-john.jpg",
-    imageClassName: "object-cover object-top"
+    imageClassName: "object-cover object-top",
+    treatmentClassName: ""
   },
   {
     ...bandMembers[2],
     role: "Drums",
     image: "/assets/images/member-dave.jpg",
-    imageClassName: "object-cover"
+    imageClassName: "object-cover",
+    treatmentClassName: "band-panel-green"
   },
   {
     ...bandMembers[3],
     role: "Bass, Backing Vocals & Keys",
     image: "/assets/images/gallery-bass.jpg",
-    imageClassName: "object-cover object-top"
+    imageClassName: "object-cover object-top",
+    treatmentClassName: "band-panel-green"
   }
 ];
 
@@ -209,7 +213,7 @@ export default function Home() {
             <div className="grid gap-4 md:grid-cols-4">
               {bandPanels.map((member) => (
                 <article
-                  className="band-panel image-frame image-treatment relative aspect-[4/5] overflow-hidden"
+                  className={`band-panel image-frame image-treatment relative aspect-[4/5] overflow-hidden ${member.treatmentClassName ?? ""}`}
                   key={member.name}
                 >
                   <Image
