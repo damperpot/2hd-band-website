@@ -4,6 +4,8 @@ import { BookingForm } from "@/components/BookingForm";
 import { CinematicHero } from "@/components/CinematicHero";
 import { Header } from "@/components/Header";
 import { SongExplorer } from "@/components/SongExplorer";
+import { WeekendCalendar, type PublicAvailabilityDay } from "@/components/WeekendCalendar";
+import availabilityData from "@/data/2hd-availability.json";
 import { bandMembers, gigs, site, songs } from "@/data/site";
 
 const genres = Array.from(new Set(songs.map((song) => song.genre))).sort();
@@ -256,21 +258,9 @@ export default function Home() {
         </section>
 
         <SongExplorer songs={songs} />
-        <section id="availability" className="availability-bridge bg-ink py-16 md:py-24">
-          <div className="section-shell grid gap-6 md:grid-cols-[0.9fr_auto] md:items-center">
-            <div>
-              <p className="eyebrow mb-4">Availability</p>
-              <h2 className="display-heading text-5xl md:text-7xl">Ready to check a date?</h2>
-              <p className="mt-4 max-w-2xl text-lg leading-8 text-fog">
-                Tell us when and where you&apos;re planning the night, and we&apos;ll come back with
-                availability for the full electric band or 2HD Unplugged.
-              </p>
-            </div>
-            <a className="button-primary" href="#book">
-              Book 2HD
-            </a>
-          </div>
-        </section>
+        <div id="availability">
+          <WeekendCalendar days={availabilityData.days as PublicAvailabilityDay[]} />
+        </div>
         <BookingForm />
 
         <section id="story" className="story-band bg-ink py-20 md:py-32">

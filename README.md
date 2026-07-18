@@ -6,7 +6,13 @@ Premium static website for 2HD (2nd Hand Daylight), built with Next.js, React, T
 
 The public Upcoming Shows section reads `data/2hd-gigs-remaining-2026.json`. This file is reviewed from the band's TimeTree export and includes public/private status so private functions remain hidden from visitors.
 
-The separate 2HD calendar analyser produces the source report used to review gigs and band availability. Internal holidays, busy dates, free Saturdays and John's conditional Friday availability must never be copied into public website data.
+The separate 2HD calendar analyser produces both the internal report and
+`data/2hd-availability.json`, the privacy-safe source for the public Friday-to-Sunday calendar.
+Only the date and one of `available`, `check`, or `unavailable` is published. Member names,
+holidays, event titles and reasons must never be copied into public website data.
+
+Selecting a green or amber date on the website prefills the booking form. The weekly TimeTree
+sync regenerates this public file and deploys it only when availability has changed.
 
 ## Local Development
 
@@ -29,7 +35,7 @@ The build exports a static site to `out/`, ready for GitHub Pages.
 - Replace `public/assets/images/hero-stage.png` with the chosen 2HD hero image or video poster.
 - Add curated gallery images under `public/assets/images/`.
 - Update social links and booking email in `data/site.ts`.
-- Update gigs in `data/site.ts` until the TimeTree/Google Calendar integration is ready.
+- Review public/private gig labels when new TimeTree naming patterns are introduced.
 
 ## Deployment
 
