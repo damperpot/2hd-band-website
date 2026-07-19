@@ -24,8 +24,8 @@ const galleryImages = [
     imageClassName: "object-cover"
   },
   {
-    src: "/assets/images/gallery-cleo-club.jpg",
-    alt: "Cleo smiling while performing with 2HD at an intimate club show",
+    src: "/assets/images/gallery-cleo-stage.jpg",
+    alt: "Cleo delivering an energetic live vocal performance with 2HD",
     className: "aspect-[5/4]",
     imageClassName: "object-cover"
   },
