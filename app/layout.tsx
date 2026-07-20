@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
     description: "Watch 2HD, check availability, and book a premium live band for your venue or event.",
     url: site.domain,
     siteName: site.fullName,
+    locale: "en_GB",
     images: [
       {
         url: "/assets/images/2hd-band-social.jpg",
@@ -45,7 +47,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-GB">
-      <body>{children}</body>
+      <body>
+        {children}
+        <GoogleAnalytics />
+      </body>
     </html>
   );
 }

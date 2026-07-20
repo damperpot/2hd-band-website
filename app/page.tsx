@@ -117,8 +117,22 @@ export default function Home() {
     alternateName: site.name,
     url: site.domain,
     slogan: site.tagline,
+    description:
+      "Four-piece live covers band from West Northamptonshire playing rock, punk, indie, new wave and alternative pop.",
+    foundingDate: "2019",
+    image: `${site.domain}/assets/images/2hd-band-social.jpg`,
+    logo: `${site.domain}/android-chrome-512x512.png`,
     genre: genres,
     email: `mailto:${site.email}`,
+    areaServed: [
+      { "@type": "AdministrativeArea", name: "West Northamptonshire" },
+      { "@type": "AdministrativeArea", name: "Midlands" }
+    ],
+    member: bandMembers.map((member) => ({
+      "@type": "OrganizationRole",
+      roleName: member.role,
+      member: { "@type": "Person", name: member.name }
+    })),
     sameAs: Object.values(site.socials)
   };
 

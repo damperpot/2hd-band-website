@@ -23,9 +23,9 @@ export const site = {
   domain: "https://2hdband.co.uk",
   email: "bookings@2hdband.co.uk",
   socials: {
-    facebook: "https://www.facebook.com/2ndhanddaylight/about",
+    facebook: "https://www.facebook.com/2ndhanddaylight/",
     instagram: "https://www.instagram.com/2hdband",
-    youtube: "https://www.youtube.com/"
+    x: "https://x.com/2HDband"
   }
 };
 
