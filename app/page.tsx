@@ -95,6 +95,20 @@ const biography = [
   "Whether performing an energetic Saturday night show or a laid-back acoustic session, 2HD's aim is always the same: to deliver memorable live music, create a fantastic atmosphere and leave audiences wanting one more song."
 ];
 
+const testimonials = [
+  {
+    quote:
+      "Our headline 2HD got everyone up rocking and singing, completing the day with great energy.",
+    attribution: "Crick Music Festival",
+    context: "Festival organiser feedback"
+  },
+  {
+    quote: "Excellent band, especially at Daventry Bike Show.",
+    attribution: "Jord Mil",
+    context: "Facebook recommendation"
+  }
+];
+
 export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -141,6 +155,41 @@ export default function Home() {
                   )
                 )}
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="testimonials-heading" className="bg-charcoal py-20 md:py-28">
+          <div className="section-shell">
+            <div className="mb-10 max-w-3xl">
+              <p className="eyebrow mb-4">From the room</p>
+              <h2 id="testimonials-heading" className="display-heading text-6xl md:text-8xl">
+                Don&apos;t just take our word for it.
+              </h2>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2">
+              {testimonials.map((testimonial) => (
+                <figure
+                  className="relative overflow-hidden border border-white/10 bg-ink p-7 shadow-glow md:p-10"
+                  key={testimonial.attribution}
+                >
+                  <span
+                    aria-hidden="true"
+                    className="display-heading absolute right-5 top-1 text-8xl text-rose/20"
+                  >
+                    &ldquo;
+                  </span>
+                  <blockquote className="relative max-w-xl text-xl font-semibold leading-relaxed text-white md:text-2xl">
+                    &ldquo;{testimonial.quote}&rdquo;
+                  </blockquote>
+                  <figcaption className="mt-8 border-t border-white/10 pt-5">
+                    <span className="block font-black uppercase tracking-wide text-white">
+                      {testimonial.attribution}
+                    </span>
+                    <span className="mt-1 block text-sm text-fog">{testimonial.context}</span>
+                  </figcaption>
+                </figure>
+              ))}
             </div>
           </div>
         </section>
@@ -293,6 +342,14 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               Follow 2HD on Facebook
+            </a>
+            <a
+              className="font-bold text-white transition hover:text-rose"
+              href={site.socials.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Follow 2HD on Instagram
             </a>
           </div>
         </div>
