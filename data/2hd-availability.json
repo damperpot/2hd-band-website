@@ -435,7 +435,7 @@
     },
     {
       "date": "2027-03-26",
-      "status": "check"
+      "status": "unavailable"
     },
     {
       "date": "2027-03-27",
@@ -443,23 +443,23 @@
     },
     {
       "date": "2027-03-28",
-      "status": "available"
+      "status": "unavailable"
     },
     {
       "date": "2027-04-02",
-      "status": "check"
+      "status": "unavailable"
     },
     {
       "date": "2027-04-03",
-      "status": "available"
+      "status": "unavailable"
     },
     {
       "date": "2027-04-04",
-      "status": "available"
+      "status": "unavailable"
     },
     {
       "date": "2027-04-09",
-      "status": "check"
+      "status": "unavailable"
     },
     {
       "date": "2027-04-10",
@@ -623,7 +623,7 @@
     },
     {
       "date": "2027-07-11",
-      "status": "unavailable"
+      "status": "available"
     },
     {
       "date": "2027-07-16",
@@ -655,15 +655,15 @@
     },
     {
       "date": "2027-07-31",
-      "status": "available"
+      "status": "unavailable"
     },
     {
       "date": "2027-08-01",
-      "status": "available"
+      "status": "unavailable"
     },
     {
       "date": "2027-08-06",
-      "status": "check"
+      "status": "unavailable"
     },
     {
       "date": "2027-08-07",
@@ -671,31 +671,31 @@
     },
     {
       "date": "2027-08-08",
-      "status": "available"
+      "status": "unavailable"
     },
     {
       "date": "2027-08-13",
-      "status": "check"
+      "status": "unavailable"
     },
     {
       "date": "2027-08-14",
-      "status": "available"
+      "status": "unavailable"
     },
     {
       "date": "2027-08-15",
-      "status": "available"
+      "status": "unavailable"
     },
     {
       "date": "2027-08-20",
-      "status": "check"
+      "status": "unavailable"
     },
     {
       "date": "2027-08-21",
-      "status": "available"
+      "status": "unavailable"
     },
     {
       "date": "2027-08-22",
-      "status": "available"
+      "status": "unavailable"
     },
     {
       "date": "2027-08-27",

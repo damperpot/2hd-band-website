@@ -11,6 +11,8 @@ build/
 *.tsbuildinfo
 .pnpm-store/
 .tools/
+.venv-exporter/
+data/timetree.ics
 
 npm-debug.log*
 yarn-debug.log*
