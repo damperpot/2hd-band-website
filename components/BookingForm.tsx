@@ -41,7 +41,12 @@ export function BookingForm() {
           <input type="hidden" name="_subject" value="New 2HD booking enquiry" />
           <input type="hidden" name="_next" value={`${site.domain}/thanks/`} />
           <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_url" value={`${site.domain}/#book`} />
+          <input
+            type="hidden"
+            name="_autoresponse"
+            value={`Thanks for your booking enquiry to 2HD. We have received your message and will reply from ${site.email}. If you do not hear from us, please email us directly.`}
+          />
           <input className="hidden" type="text" name="_honey" tabIndex={-1} autoComplete="off" />
           <label className="grid gap-2 text-sm font-bold uppercase tracking-wide text-fog">
             Name
@@ -78,6 +83,14 @@ export function BookingForm() {
           <button className="button-primary w-fit bg-rose text-white hover:bg-white hover:text-ink" type="submit">
             Book 2HD
           </button>
+          <p className="text-sm leading-6 text-fog">
+            You will receive an email copy when your enquiry is accepted. If it does not arrive,
+            please email{" "}
+            <a className="font-bold text-white underline underline-offset-4" href={`mailto:${site.email}`}>
+              {site.email}
+            </a>{" "}
+            directly.
+          </p>
         </form>
       </div>
     </section>
