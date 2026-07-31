@@ -1,17 +1,19 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { site } from "@/data/site";
 
 const navItems = [
-  ["Live", "#why"],
-  ["Watch", "#watch"],
-  ["Shows", "#shows"],
-  ["Gallery", "#gallery"],
-  ["Band", "#band"],
-  ["Unplugged", "#unplugged"],
-  ["Songs", "#songs"]
+  ["Live", "/#why"],
+  ["Watch", "/#watch"],
+  ["Shows", "/#shows"],
+  ["Gallery", "/#gallery"],
+  ["Band", "/#band"],
+  ["Unplugged", "/#unplugged"],
+  ["Songs", "/#songs"],
+  ["Areas", "/#areas"]
 ];
 
 export function Header() {
@@ -34,7 +36,7 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex min-h-16 w-[min(1180px,calc(100%-32px))] items-center justify-between gap-4 md:min-h-20">
-        <a className="flex items-center gap-3" href="#home" onClick={() => setOpen(false)}>
+        <Link className="flex items-center gap-3" href="/" onClick={() => setOpen(false)}>
           <span className="relative h-10 w-10 md:h-12 md:w-12">
             <Image
               src="/assets/logo/2hd-energy-ring-web-alpha.png"
@@ -48,9 +50,9 @@ export function Header() {
           <span className="hidden text-xs font-black uppercase tracking-[0.18em] text-fog sm:block">
             2nd Hand Daylight
           </span>
-        </a>
+        </Link>
         <button
-          className="grid h-11 w-11 place-items-center rounded-sm border border-white/15 md:hidden"
+          className="grid h-11 w-11 place-items-center rounded-sm border border-white/15 lg:hidden"
           type="button"
           aria-expanded={open}
           aria-label="Toggle navigation"
@@ -59,28 +61,28 @@ export function Header() {
           <span className="h-0.5 w-5 bg-white" />
         </button>
         <nav
-          className={`absolute inset-x-0 top-16 grid gap-1 border-b border-white/10 bg-ink p-4 md:static md:flex md:items-center md:border-0 md:bg-transparent md:p-0 ${
-            open ? "grid" : "hidden md:flex"
+          className={`absolute inset-x-0 top-16 grid gap-1 border-b border-white/10 bg-ink p-4 md:top-20 lg:static lg:flex lg:items-center lg:border-0 lg:bg-transparent lg:p-0 ${
+            open ? "grid" : "hidden lg:flex"
           }`}
           aria-label="Main navigation"
         >
           {navItems.map(([label, href]) => (
-            <a
-              className="nav-link rounded-sm px-3 py-3 text-sm font-black uppercase tracking-wide text-fog transition hover:text-white md:py-2"
+            <Link
+              className="nav-link rounded-sm px-3 py-3 text-sm font-black uppercase tracking-wide text-fog transition hover:text-white lg:py-2"
               href={href}
               key={href}
               onClick={() => setOpen(false)}
             >
               {label}
-            </a>
+            </Link>
           ))}
-          <a
+          <Link
             className="header-book-cta"
-            href="#book"
+            href="/#book"
             onClick={() => setOpen(false)}
           >
             Book
-          </a>
+          </Link>
         </nav>
       </div>
     </header>

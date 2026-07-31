@@ -1,12 +1,27 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Availability } from "@/components/Availability";
 import { BookingForm } from "@/components/BookingForm";
 import { CinematicHero } from "@/components/CinematicHero";
 import { Header } from "@/components/Header";
+import { SiteFooter } from "@/components/SiteFooter";
 import { SongExplorer } from "@/components/SongExplorer";
 import { WeekendCalendar, type PublicAvailabilityDay } from "@/components/WeekendCalendar";
 import availabilityData from "@/data/2hd-availability.json";
+import { serviceAreas } from "@/data/areas";
 import { bandMembers, gigs, site, songs } from "@/data/site";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "2HD | Live Covers Band in Daventry & the Midlands"
+  },
+  description:
+    "Book 2HD, a four-piece Daventry-area covers band playing rock, punk, indie, new wave and alternative pop at pubs, festivals and private events.",
+  alternates: {
+    canonical: "/"
+  }
+};
 
 const genres = Array.from(new Set(songs.map((song) => song.genre))).sort();
 
@@ -112,35 +127,63 @@ const testimonials = [
 export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "MusicGroup",
-    name: site.fullName,
-    alternateName: site.name,
-    url: site.domain,
-    slogan: site.tagline,
-    description:
-      "Four-piece live covers band from West Northamptonshire playing rock, punk, indie, new wave and alternative pop.",
-    foundingDate: "2019",
-    image: `${site.domain}/assets/images/2hd-band-social.jpg`,
-    logo: `${site.domain}/android-chrome-512x512.png`,
-    genre: genres,
-    email: `mailto:${site.email}`,
-    areaServed: [
-      { "@type": "AdministrativeArea", name: "West Northamptonshire" },
-      { "@type": "AdministrativeArea", name: "Midlands" }
-    ],
-    member: bandMembers.map((member) => ({
-      "@type": "OrganizationRole",
-      roleName: member.role,
-      member: { "@type": "Person", name: member.name }
-    })),
-    sameAs: Object.values(site.socials)
+    "@graph": [
+      {
+        "@type": "MusicGroup",
+        "@id": `${site.domain}/#band`,
+        name: site.fullName,
+        alternateName: site.name,
+        url: site.domain,
+        slogan: site.tagline,
+        description:
+          "Four-piece live covers band based near Daventry in West Northamptonshire, playing rock, punk, indie, new wave and alternative pop.",
+        foundingDate: "2019",
+        image: `${site.domain}/assets/images/2hd-band-social.jpg`,
+        logo: `${site.domain}/android-chrome-512x512.png`,
+        genre: genres,
+        email: `mailto:${site.email}`,
+        location: {
+          "@type": "Place",
+          name: "Daventry, West Northamptonshire"
+        },
+        areaServed: serviceAreas.map((area) => ({
+          "@type": "AdministrativeArea",
+          name: area.county
+        })),
+        member: bandMembers.map((member) => ({
+          "@type": "OrganizationRole",
+          roleName: member.role,
+          member: { "@type": "Person", name: member.name }
+        })),
+        sameAs: Object.values(site.socials)
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${site.domain}/#website`,
+        url: site.domain,
+        name: site.fullName,
+        description:
+          "Official website for 2HD, a live covers band based near Daventry in West Northamptonshire.",
+        publisher: { "@id": `${site.domain}/#band` },
+        inLanguage: "en-GB"
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${site.domain}/#webpage`,
+        url: site.domain,
+        name: "2HD | Live Covers Band in Daventry & the Midlands",
+        isPartOf: { "@id": `${site.domain}/#website` },
+        about: { "@id": `${site.domain}/#band` },
+        inLanguage: "en-GB"
+      }
+    ]
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
       />
       <Header />
       <main>
@@ -328,6 +371,41 @@ export default function Home() {
         <div id="availability">
           <WeekendCalendar days={availabilityData.days as PublicAvailabilityDay[]} />
         </div>
+
+        <section id="areas" className="section-band py-20 md:py-32">
+          <div className="section-shell">
+            <div className="mb-10 grid gap-6 md:grid-cols-[0.9fr_1.1fr] md:items-end">
+              <div>
+                <p className="eyebrow mb-4">Playing locally</p>
+                <h2 className="display-heading text-6xl md:text-8xl">Live music across the region.</h2>
+              </div>
+              <p className="text-lg leading-8 text-fog">
+                Based near Daventry in West Northamptonshire, 2HD welcomes bookings within roughly
+                50 miles for pubs, clubs, festivals and private functions across the surrounding
+                counties.
+              </p>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {serviceAreas.map((area) => (
+                <Link
+                  className="group border border-white/10 bg-charcoal p-6 transition hover:-translate-y-0.5 hover:border-rose/60"
+                  href={`/cover-band/${area.slug}/`}
+                  key={area.slug}
+                >
+                  <p className="eyebrow mb-4">Cover band</p>
+                  <h3 className="text-2xl font-black text-white">{area.county}</h3>
+                  <p className="mt-4 text-sm leading-6 text-fog">
+                    Electric and unplugged live music for events across {area.county}.
+                  </p>
+                  <span className="mt-6 inline-block text-sm font-black uppercase tracking-wide text-white transition group-hover:text-rose">
+                    Explore the area →
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <BookingForm />
 
         <section id="story" className="story-band bg-ink py-20 md:py-32">
@@ -344,30 +422,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer className="border-t border-white/10 bg-black py-8">
-        <div className="section-shell flex flex-col justify-between gap-4 text-sm text-fog md:flex-row">
-          <span>&copy; {new Date().getFullYear()} {site.fullName}</span>
-          <div className="flex flex-wrap gap-x-5 gap-y-2">
-            <span>{site.tagline}</span>
-            <a
-              className="font-bold text-white transition hover:text-rose"
-              href={site.socials.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Follow 2HD on Facebook
-            </a>
-            <a
-              className="font-bold text-white transition hover:text-rose"
-              href={site.socials.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Follow 2HD on Instagram
-            </a>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }
