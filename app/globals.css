@@ -758,6 +758,11 @@ body {
   border-block: 1px solid rgb(255 255 255 / 10%);
 }
 
+.setlist-drawer > .my-5,
+.setlist-drawer > .mb-3 {
+  flex: 0 0 auto;
+}
+
 .mobile-sticky-cta {
   position: fixed;
   right: 1rem;
