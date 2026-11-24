@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export type PublicAvailabilityDay = {
   date: string;
@@ -42,7 +42,10 @@ function chooseDate(date: string) {
 
 export function WeekendCalendar({ days }: { days: PublicAvailabilityDay[] }) {
   const months = useMemo(() => Array.from(new Set(days.map((day) => monthKey(day.date)))), [days]);
-  const [monthIndex, setMonthIndex] = useState(0);
+  const [viewedMonth, setViewedMonth] = useState<string | null>(null);
+  useEffect(() => setViewedMonth(new Date().toISOString().slice(0, 7)), []);
+  const currentMonthIndex = viewedMonth ? months.findIndex((month) => month >= viewedMonth) : 0;
+  const monthIndex = currentMonthIndex === -1 ? months.length - 1 : currentMonthIndex;
   const selectedMonth = months[monthIndex];
   const monthDays = days.filter((day) => monthKey(day.date) === selectedMonth);
   const firstDay = monthDays[0] ? localDate(monthDays[0].date).getDay() : 5;
@@ -77,7 +80,7 @@ export function WeekendCalendar({ days }: { days: PublicAvailabilityDay[] }) {
           <div className="calendar-toolbar">
             <button
               type="button"
-              onClick={() => setMonthIndex((index) => Math.max(0, index - 1))}
+              onClick={() => setViewedMonth(months[Math.max(0, monthIndex - 1)])}
               disabled={monthIndex === 0}
               aria-label="Previous month"
             >
@@ -86,7 +89,7 @@ export function WeekendCalendar({ days }: { days: PublicAvailabilityDay[] }) {
             <h3>{monthLabel.format(localDate(`${selectedMonth}-01`))}</h3>
             <button
               type="button"
-              onClick={() => setMonthIndex((index) => Math.min(months.length - 1, index + 1))}
+              onClick={() => setViewedMonth(months[Math.min(months.length - 1, monthIndex + 1)])}
               disabled={monthIndex === months.length - 1}
               aria-label="Next month"
             >
