@@ -654,7 +654,6 @@ body {
   max-height: 34rem;
   gap: 1px;
   overflow-y: auto;
-  overscroll-behavior: contain;
   scrollbar-color: #d46874 #151515;
   scrollbar-width: thin;
   border-block: 1px solid rgb(255 255 255 / 10%);
