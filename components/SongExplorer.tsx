@@ -3,8 +3,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { Song } from "@/data/site";
 
-const initialCount = 10;
-
 export function SongExplorer({ songs }: { songs: Song[] }) {
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState("All");
@@ -32,8 +30,6 @@ export function SongExplorer({ songs }: { songs: Song[] }) {
       return matchesFilter && matchesQuery;
     });
   }, [filter, query, songs]);
-
-  const previewSongs = visibleSongs.slice(0, initialCount);
 
   useEffect(() => {
     if (!open) {
@@ -92,7 +88,7 @@ export function SongExplorer({ songs }: { songs: Song[] }) {
         <div className="mb-8 grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:items-end">
           <div>
             <p className="eyebrow mb-4">Songs</p>
-            <h2 className="display-heading text-6xl md:text-8xl">Set-list preview.</h2>
+            <h2 className="display-heading text-6xl md:text-8xl">Browse the set list.</h2>
           </div>
           <div className="grid gap-3">
             <a className="skip-booking-link" href="#book">
@@ -129,11 +125,11 @@ export function SongExplorer({ songs }: { songs: Song[] }) {
         </div>
 
         <p className="mb-5 text-sm font-black uppercase tracking-wide text-fog">
-          Showing {previewSongs.length} of {visibleSongs.length} songs
+          Showing {visibleSongs.length} of {songs.length} songs
         </p>
 
-        <div className="song-preview-grid">
-          {previewSongs.map((song) => (
+        <div className="song-preview-grid" role="region" aria-label="Set list songs" tabIndex={0}>
+          {visibleSongs.map((song) => (
             <article className="song-row" key={`${song.artist}-${song.title}`}>
               <div>
                 <h3>{song.title}</h3>
